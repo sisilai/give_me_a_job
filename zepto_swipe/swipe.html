@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>.delete { display: none; }</style>
+    <script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.js"></script>
+    <script src="touch.js"></script>
+</head>
+<body style="font-size: 40px;">
+
+<ul id="items">
+    <li>List item 1 <span class="delete">DELETE</span></li>
+    <li>List item 2 <span class="delete">DELETE</span></li>
+</ul>
+<script>
+    // 页面加载完成后执行函数
+    Zepto(function($){
+        alert('Ready to Zepto!');
+        // show delete buttons on swipe
+        $('#items li').swipe(function(){
+            console.log("swipe起了效果");
+            $('.delete').hide();
+            $('.delete', this).show();
+        });
+
+        // delete row on tapping delete button
+        $('.delete').tap(function(){
+            $(this).parent('li').remove();
+        });
+    });
+</script>
+</body>
+</html>
