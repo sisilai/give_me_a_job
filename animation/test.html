@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div.bg {
+            border: 1px solid #2f2f2f;
+            width: 62px;
+            height: 62px;
+            /*border-radius: 100%;*/
+            background: url("music.gif") no-repeat;
+        }
+        div.photo
+        {
+
+            border: 1px solid #2f2f2f;
+            background-image: url("photo_64.png");
+            width:inherit;
+            height:inherit;
+            position:relative;
+            border-radius: 100%;
+            /*animation: name duration timing-function delay iteration-count direction;*/
+            -webkit-animation:mymove 500ms 0s infinite normal; /*Safari and Chrome*/
+        }
+
+        @keyframes mymove
+        {
+            0%   {-webkit-transform: rotate(0deg);}
+            25%   {-webkit-transform: rotate(80deg);}
+            50%   {-webkit-transform: rotate(160deg);}
+            75%   {-webkit-transform: rotate(240deg);}
+            100%   {-webkit-transform: rotate(360deg);}
+        }
+
+        @-webkit-keyframes mymove /*Safari and Chrome*/
+        {
+            0%   {-webkit-transform: rotate(0deg);}
+            25%   {-webkit-transform: rotate(80deg);}
+            50%   {-webkit-transform: rotate(160deg);}
+            75%   {-webkit-transform: rotate(240deg);}
+            100%   {-webkit-transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body style="background-color: yellowgreen;">
+<div class="bg">
+    <div class="photo"></div>
+</div>
+
+</body>
+</html>
