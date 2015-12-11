@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
+
+        #nextContent { display: none; }
+
         .delete { display: none; }
 
         .item1 {
@@ -30,6 +33,9 @@
     <li id="item1">List item 1 <span class="delete">DELETE</span></li>
     <li>List item 2 <span class="delete">DELETE</span></li>
 </ul>
+<div id="nextContent">
+    我是下一页
+</div>
 <script>
     // 页面加载完成后执行函数
     Zepto(function($){
@@ -41,7 +47,8 @@
             $('.delete', this).show();
 
             //add
-            $("#item1").addClass('item1');//.animation("hideItem 3s");
+            $("#item1").addClass('item1');
+            $("#nextContent").show()
         });
 
         // delete row on tapping delete button
