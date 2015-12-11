@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <style>.delete { display: none; }</style>
+    <style>
+        .delete { display: none; }
+
+        .item1 {
+            animation: hideItem 3s infinite;
+            -webkit-animation: hideItem 3s infinite;
+            position: relative;
+        }
+
+        @-webkit-keyframes hideItem {
+            from {
+                top: 0px;
+            }
+            to {
+                top: 1000px;
+            }
+        }
+    </style>
     <script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.js"></script>
     <script src="touch.js"></script>
 </head>
 <body style="font-size: 40px;">
 
 <ul id="items">
-    <li>List item 1 <span class="delete">DELETE</span></li>
+    <li id="item1">List item 1 <span class="delete">DELETE</span></li>
     <li>List item 2 <span class="delete">DELETE</span></li>
 </ul>
 <script>
@@ -22,6 +39,9 @@
             console.log("swipe起了效果");
             $('.delete').hide();
             $('.delete', this).show();
+
+            //add
+            $("#item1").addClass('item1');//.animation("hideItem 3s");
         });
 
         // delete row on tapping delete button
