@@ -14,7 +14,8 @@
             width: 536px;
             height: 536px;
             background-image: url("pointer.png");
-            -webkit-animation: rotatePointer 2s infinite;
+            -webkit-animation: rotatePointer 2s 1;
+            /*name duration timing-function delay iteration-count direction;*/
         }
 
         @-webkit-keyframes rotatePointer {
@@ -47,10 +48,21 @@
             }
         }
     </style>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    <script>
+        function stop() {
+            $(".pointer").css('animation-play-state', 'paused');
+        }
+    </script>
 </head>
 <body>
 <div class="pan">
     <div class="pointer"></div>
+</div>
+
+<div style="text-align: center;
+            width: 536px;margin-top: 50px">
+    <input onclick="stop()" type="button" value="停止">
 </div>
 </body>
 </html>
