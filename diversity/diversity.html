@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .pan {
+            width: 536px;
+            height: 536px;
+            background-image: url("pan.png");
+        }
+        
+        .pointer {
+            width: 536px;
+            height: 536px;
+            background-image: url("pointer.png");
+            -webkit-animation: rotatePointer 2s infinite;
+        }
+
+        @-webkit-keyframes rotatePointer {
+            0% {
+                -webkit-transform: rotate(22.5deg);
+            }
+            12.5% {
+                -webkit-transform: rotate(67.5deg);
+            }
+            25% {
+                -webkit-transform: rotate(112.5deg);
+            }
+            37.5% {
+                -webkit-transform: rotate(157.5deg);
+            }
+            50% {
+                -webkit-transform: rotate(202.5deg);
+            }
+            62.5% {
+                -webkit-transform: rotate(247.5deg);
+            }
+            75% {
+                -webkit-transform: rotate(292.5deg);
+            }
+            87.5% {
+                -webkit-transform: rotate(337.5deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="pan">
+    <div class="pointer"></div>
+</div>
+</body>
+</html>
