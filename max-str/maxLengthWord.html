@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function() {
+            function maxLengthWord() {
+                var str = "assssssssssffffsaaaaa";
+                var tempStr = str[0];
+                var resultStr = str[0];
+                var count = 0;
+                for(var i = 1;i < str.length;i++) {
+                    if(str[i-1] == str[i]) {
+                        tempStr += str[i];
+                        count ++;
+                        if(tempStr.length > resultStr.length) {
+                            resultStr = tempStr;
+                        }
+                    } else {
+                        count = 0;
+                        tempStr = str[i];
+                    }
+                }
+                return resultStr;
+            }
+            console.log(maxLengthWord());
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
