@@ -6,7 +6,10 @@
     <script>
         window.onload = function() {
             function maxLengthWord() {
-                var str = "assssssssssffffsaaaaa";
+                var str = "";//"assssssssssffffsaaaaa";
+                if(str.length == 0) {
+                    return "str不能为空";
+                }
                 var tempStr = str[0];
                 var resultStr = str[0];
                 var count = 0;
