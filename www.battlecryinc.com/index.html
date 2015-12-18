@@ -16,26 +16,26 @@
         }
 
         nav {
-            margin-left: 30px;
-            margin-right: 30px;
+            margin-left: 50px;
+            margin-right: 40px;
         }
 
-        /*.logo {*/
-            /*position: fixed;*/
-            /*left: 50px;*/
-        /*}*/
+        .logo {
+            font-size: 25px;
+        }
 
         .menu {
             float: right;
+            font-size: 17px;
         }
 
         .menu-item {
             padding: 10px;
         }
 
-        .menu-item:last-child {
-            padding-right: 0;
-        }
+        /*.menu-item:last-child {*/
+            /*padding-right: 0;*/
+        /*}*/
 
         a {
             color: white;
@@ -45,7 +45,49 @@
         a.current {
             opacity: .5;
         }
+
+        video {
+            width: 100%;
+            z-index: 1;
+        }
+
+        h1 {
+            position: relative;
+            vertical-align: middle;
+            z-index: 2;
+        }
+
+        /*section.slogan {*/
+            /*height: 600px;*/
+        /*}*/
+
+        .about section {
+            float: left;
+            width: 33.33%;
+            text-align: center;
+        }
+
+        .about-section {
+            margin-top: 100px;
+            padding: 0 20%;
+        }
+
+        .about-h2 {
+            font-size: 41px;
+            text-align: center;
+        }
     </style>
+    <script src="javascript/jquery-1.10.2.min.js"></script>
+    <script src="javascript/jquery.videobackground.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.video-background').videobackground({
+                videoSource: ['video/1.mp4', 'video/mp4'],
+                preload: 'preload',
+                loop: true
+            });
+        });
+    </script>
 </head>
 <body>
 <header>
@@ -57,5 +99,39 @@
         </span>
     </nav>
 </header>
+
+<section class="slogan-section">
+    <div class="video-background">
+        <!--<video preload="none" poster="video/big-buck-bunny.jpg" autoplay="autoplay">-->
+            <!--<source src="video/big-buck-bunny.mp4" type="video/mp4">-->
+            <!--<source src="video/big-buck-bunny.webm" type="video/webm">-->
+            <!--<source src="video/big-buck-bunny.ogv" type="video/ogg"></video>-->
+    <!--</div>-->
+        <!--<video src="video/1.mp4" autoplay="autoplay" preload="preload" loop ="loop"></video>-->
+    </div>
+    <div id="slogan">
+        <h1>Reality is broken. Gamers change the world.</h1>
+    </div>
+</section>
+
+<section class="about-section">
+    <h2 class="about-h2">About BattleCry Inc.</h2>
+    <div class="about">
+        <section>
+            <h3><pre>Who We Are</pre></h3>
+            <p>
+                        We stared at 2015 as a team of passionate and experienced designers, engineers and gamers, who worked
+                        at QQ and Wechat team previously.
+                        Held up in a Shenzhen wework, we laid out our mission and the values that would guide our way.
+                    </p>
+        </section>
+        <section>
+            <h3><pre>Who We Are</pre></h3>
+        </section>
+        <section>
+            <h3><pre>Who We Are</pre></h3>
+        </section>
+    </div>
+</section>
 </body>
 </html>
