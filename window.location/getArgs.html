@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function() {
+            function getArgs() {
+                var search = window.location.search ? window.location.search.substring(1) : "";
+                var args = {};
+                var items = search.length ? search.split('&') : [];
+                var item = null;
+                var name = null;
+                var value = null;
+                for (var i=0;i< items.length;i++) {
+                    item = items[i].split('=');
+                    name = decodeURIComponent(item[0]);
+                    value = decodeURIComponent(item[1]);
+                    if(name.length) {
+                        args[name] = value;
+                    }
+                }
+                return JSON.stringify(args);
+            }
+            console.log(getArgs());
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
