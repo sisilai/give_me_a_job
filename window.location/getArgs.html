@@ -7,6 +7,7 @@
         window.onload = function() {
             function getArgs() {
                 var search = window.location.search ? window.location.search.substring(1) : "";
+                search = decodeURIComponent(search);
                 var args = {};
                 var items = search.length ? search.split('&') : [];
                 var item = null;
@@ -14,8 +15,8 @@
                 var value = null;
                 for (var i=0;i< items.length;i++) {
                     item = items[i].split('=');
-                    name = decodeURIComponent(item[0]);
-                    value = decodeURIComponent(item[1]);
+                    name = item[0];
+                    value = item[1];
                     if(name.length) {
                         args[name] = value;
                     }
