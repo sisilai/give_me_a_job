@@ -12,3 +12,5 @@ github-fork-me 逆时针旋转45度
 diversity 抽奖页面
  
 max-str 求字符串中最大相同字母长度的子串
+
+www.battlecryinc.com 战吼网站前端
