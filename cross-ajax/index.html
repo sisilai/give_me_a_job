@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../www.battlecryinc.com/javascript/jquery-1.10.2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var url = "https://graph.qq.com/user/get_user_info?oauth_consumer_key=100330589" +
+                    "&access_token=5F551DFDCE2BB14CA3A9FB970C504073&openid=D1451671092B01C8552ED24C329E1954" +
+                    "&format=json";
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'JSONP',//here
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        });
+//        window.onload = function() {
+//            function handleResponse(response) {
+//                console.log(response.ret);
+//            }
+//            var url = "https://graph.qq.com/user/get_user_info?jsoncallback=handleResponse&oauth_consumer_key=100330589" +
+//                    "&access_token=5F551DFDCE2BB14CA3A9FB970C504073&openid=D1451671092B01C8552ED24C329E1954" +
+//                    "&format=json";
+//            var script = document.createElement("script");
+//            script.src = url;
+//            document.body.insertBefore(script,document.body.firstChild);
+//
+//        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>
