@@ -26,3 +26,5 @@ jquery-use jquery实践
 qq_chat_style QQ气泡
 
 background_position css雪碧图
+
+offset jQuery使用
