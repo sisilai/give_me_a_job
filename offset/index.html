@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .img-style {
+            position: fixed;
+            left: 100px;
+            top: 60px;
+        }
+    </style>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(function() {
+            var ele = $(".img-style");
+            var positon = ele.offset();
+            var left = positon.left;
+            var top = positon.top;
+            console.log("left: " + left + "\n","top: " + top);
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            setInterval(function() {
+                if(left <= width -540) {
+                    left += 10;
+                    positon.left = left;
+//                    positon.top = top;
+                    ele.offset(positon);
+                }
+
+            },100);
+//            left += 20;
+//            top += 40;
+//            positon.left = left;
+//            positon.top = top;
+//            ele.offset(positon);
+//            console.log("change:\n" + "left: " + ele.offset().left,"top: " + ele.offset().top);
+        });
+    </script>
+</head>
+<body>
+<img src="http://sucimg.itc.cn/avatarimg/s_201314_1442559960432" class="img-style">
+</body>
+</html>
