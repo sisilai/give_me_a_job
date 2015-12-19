@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--<input type="text" id="test_input">-->
+<!--<input type='button' value='添加'/>-->
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var img = $("<img/>", {
+            css: {border: "10px solid black"},
+            src: "http://sucimg.itc.cn/avatarimg/s_201314_1442559960432",
+            click: "handleMessage"
+        });
+
+        //追加到备选元素的最前面
+        $(this.body).prepend(img);
+
+        //追加到备选元素的最后
+        $(this.body).append(img);
+
+        //在备选元素之前追加
+        $(this.body).before(img);
+
+        //在备选元素之后追加
+        $(this.body).after(img);
+
+        //但是最后只保留最后一个修改
+//            $("input[type='button']").click(function(){
+//                $(this).before(img);
+//            });
+    });
+</script>
+</body>
+</html>
