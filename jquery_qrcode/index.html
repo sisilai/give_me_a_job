@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #icon {
+            background-image: url("iconfont-gongxibaoxi.png");
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            left: 118px;
+            top: 118px;;
+        }
+
+        #div128 {
+            width: 128px;
+            height: 10px;
+            background-color: #ffea76;
+            display: none;
+        }
+
+        #div128h {
+            width: 10px;
+            height: 128px;
+            background-color: #ffea76;
+            display: none;
+        }
+    </style>
+    <script src="../javascript/jquery-1.10.2.min.js"></script>
+    <script src="../javascript/jquery.qrcode.min.js"></script>
+    <script src="../javascript/utf.js"></script>
+    <script>
+        $(function(){
+            var str = utf16to8("this plugin is great中文乱码赖思思");
+            $('#qrcode').qrcode({width: 256,height: 256,text: str});
+        });
+    </script>
+</head>
+<body>
+<div id="qrcode">
+    <div id="div128"></div>
+    <div id="icon"></div>
+</div>
+<div id="div128h"></div>
+</body>
+</html>
