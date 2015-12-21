@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            height: 30px;
+            padding: 0;
+            margin: 0;
+            line-height: 30px;
+            background-color: gray;
+        }
+
+        ul>li {
+            list-style: none;
+            float: left;
+            width: 60px;
+            height: inherit;
+            text-align: center;
+        }
+
+        .menu-item {
+            width: 60px;
+            margin-top: 30px;
+            /*display: none;*/
+            background-color: green;
+        }
+
+        .menu-item a {
+            display: block;
+            padding: 5px 5px 0 5px;
+            text-align: center;
+        }
+
+        .down-icon {
+            border-right: 7px solid transparent;
+            border-left: 7px solid transparent;
+            border-top: 7px solid blue;
+            position: relative;
+            top: 14px;
+        }
+
+        .up-icon {
+            border-right: 7px solid transparent;
+            border-left: 7px solid transparent;
+            border-bottom: 7px solid blue;
+            position: relative;
+            top: 14px;
+        }
+
+        .my-item > * {
+            float: left;
+            display: block;
+        }
+    </style>
+    <script src="../javascript/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function(){
+            $(".menu").bind({
+                mouseover:function(){$(".menu-item").css("display","block")},
+                mouseout:function(){$(".menu-item").css("display","none")}
+            });
+
+            $("ul>li").bind({
+                mouseover:function(){
+                    $(this).css("backgroundColor","green");
+                    $("#down-icon").addClass("up-icon");
+                    $("#down-icon").removeClass("down-icon");
+                },
+                mouseout:function(){$(this).css("backgroundColor","grey");
+                    $("#down-icon").addClass("down-icon");
+                    $("#down-icon").removeClass("up-icon");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div>
+    <ul>
+        <li>
+            <a href="#">首页</a>
+        </li>
+        <li class="menu">
+            <div class="my-item">
+                <a href="#">我的</a>
+                <span id="down-icon" class="down-icon"></span>
+            </div>
+            <div class="menu-item">
+                <a href="#">我的1</a>
+                <a href="#">我的2</a>
+                <a href="#">我的3</a>
+                <a href="#">我的4</a>
+                <a href="#">我的5</a>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
