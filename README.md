@@ -30,3 +30,5 @@ background_position css雪碧图
 offset jQuery使用
 
 jQuery.fn jQuery插件开发
+
+jQuery_qrcode 二维码生成器
