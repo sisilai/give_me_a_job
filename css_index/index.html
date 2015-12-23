@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .A {
+            position: absolute;
+            width: 400px;
+            height: 200px;
+            border: 1px solid #2f2f2f;
+            margin-top: 100px;
+        }
+
+        .B {
+            z-index: 1;
+            position: absolute;
+            width: 200px;
+            height: 260px;
+            margin-left: 100px;
+            top: -30px;
+            border: 1px solid #2f2f2f;
+        }
+
+        .B:before {
+            left: -7px;
+            top: 21px;
+            content: "";
+            border-right: 7px solid #2f2f2f;
+            border-top: 7px solid transparent;
+            position: absolute;
+        }
+
+        .B:after {
+            left: -7px;
+            bottom: 23px;
+            content: "";
+            border-right: 7px solid #2f2f2f;
+            border-bottom: 7px solid transparent;
+            position: absolute;
+        }
+        
+        .C {
+            z-index: 2;
+            position: absolute;
+            width: 210px;
+            height: 80px;
+            background-color: #ffea76;
+            left: -10px;
+            border-bottom: 2px solid #d71f2e;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+<div class="A">
+    <div class="B">
+        <div class="C"></div>
+    </div>
+</div>
+</body>
+</html>
