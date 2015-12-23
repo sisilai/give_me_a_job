@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {
+            border: 1px solid #2f2f2f;
+        }
+
+        table td {
+            border: 1px solid #2f2f2f;
+        }
+    </style>
+    <script src="../javascript/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function(){
+            var jsonArray = [];
+
+            function bubbleSort(jsonArray) {
+                var len = jsonArray.length;
+                if(len == 0) {
+                    return [];
+                }
+
+                for(var i=0;i<len;i++) {
+                    for(var j=i+1;j<len;j++) {
+                        if(jsonArray[i]["Age"] < jsonArray[j]["Age"]) {
+                            var temp = jsonArray[j];
+                            jsonArray[j] = jsonArray[i];
+                            jsonArray[i] = temp;
+                        }
+                    }
+                }
+
+                return jsonArray;
+            }
+            $.getJSON("person.json",function(data){
+                jsonArray = bubbleSort(data);
+                console.log(JSON.stringify(jsonArray));
+
+                for(var t=0;t<jsonArray.length;t++) {
+                    $("table tbody").append(
+                                    "<tr><td>" +
+                                    jsonArray[t]["ID"] +
+                                    "</td><td>" +
+                                    jsonArray[t]["Name"] +
+                                    "</td><td>" +
+                                    jsonArray[t]["Age"] +
+                                    "</td></tr>"
+                    );
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Age</td>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+</body>
+</html>
