@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../javascript/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function(){
+            var url = "";
+            $.ajax(url,{
+                type: "get",
+                async: false,
+                dataType: "jsonp",
+                callback: "callback",
+                jsonpCallback: "handleData",
+                success: function(data) {
+                    console.log(JSON.stringify(data));
+                },
+                error: function() {
+                    alert("fail!");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
