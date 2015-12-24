@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function() {
+            var button = document.getElementsByName("button");
+            var body = document.getElementsByTagName("body");
+//            body.appendChild(button);
+//            body[0] = button;
+
+            if(button.addEventListener) {
+                button.addEventListener("click",function(event){
+                    alert("hello");
+                },false);
+            } else {
+                button.attachEvent("onclick",function(){
+                    alert("hello1");
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+<button>点我</button>
+</body>
+</html>
